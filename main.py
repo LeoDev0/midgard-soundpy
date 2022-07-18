@@ -77,7 +77,7 @@ while running:
                 play_sound(pygame.K_F9, 'sounds/ain-cigarrinho.mp3')
 
             if event.key == pygame.K_F10:
-                play_sound(pygame.K_F10, 'sounds/ain-cafezinho.mp3')  # ARQUIVO NÃO FUNCIONANDO
+                play_sound(pygame.K_F10, 'sounds/ain-cafezinho.mp3')
     
     title_font = pygame.font.Font('freesansbold.ttf', 30)
     shortcuts_font = pygame.font.Font('freesansbold.ttf', 20)
