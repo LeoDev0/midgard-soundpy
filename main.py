@@ -40,7 +40,7 @@ while running:
     # Background Image
     screen.blit(background, (0, 0))
 
-    # Get keystokes event status (clicked or not)
+    # Get keystrokes event status (clicked or not)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -60,8 +60,25 @@ while running:
 
             if event.key == pygame.K_F4:
                 play_sound(pygame.K_F4, 'sounds/tome.mp3')
+            
+            if event.key == pygame.K_F5:
+                play_sound(pygame.K_F5, 'sounds/uepa.mp3')
+
+            if event.key == pygame.K_F6:
+                play_sound(pygame.K_F6, 'sounds/quem-disse-que-isso-e-problema-meu.mp3')
+
+            if event.key == pygame.K_F7:
+                play_sound(pygame.K_F7, 'sounds/coquinha-vai-tomar-no-cu.mp3')
+
+            if event.key == pygame.K_F8:
+                play_sound(pygame.K_F8, 'sounds/bolsonaro.mp3')
+
+            if event.key == pygame.K_F9:
+                play_sound(pygame.K_F9, 'sounds/ain-cigarrinho.mp3')
+
+            if event.key == pygame.K_F10:
+                play_sound(pygame.K_F10, 'sounds/ain-cafezinho.mp3')  # ARQUIVO NÃO FUNCIONANDO
     
-    # show_shorcut_to_audios()
     title_font = pygame.font.Font('freesansbold.ttf', 30)
     shortcuts_font = pygame.font.Font('freesansbold.ttf', 20)
 
@@ -72,6 +89,12 @@ while running:
     screen.blit(shortcuts_font.render('[F2] - cala-boca-puta', True, (255, 255, 255)), (50, 80))
     screen.blit(shortcuts_font.render('[F3] - me-apaixonei', True, (255, 255, 255)), (50, 110))
     screen.blit(shortcuts_font.render('[F4] - tome', True, (255, 255, 255)), (50, 140))
+    screen.blit(shortcuts_font.render('[F5] - uepa', True, (255, 255, 255)), (50, 170))
+    screen.blit(shortcuts_font.render('[F6] - quem-disse-que-isso-e-problema-meu', True, (255, 255, 255)), (50, 200))
+    screen.blit(shortcuts_font.render('[F7] - coquinha-vai-tomar-no-cu', True, (255, 255, 255)), (50, 230))
+    screen.blit(shortcuts_font.render('[F8] - bolsonaro', True, (255, 255, 255)), (50, 260))
+    screen.blit(shortcuts_font.render('[F9] - ain-cigarrinho', True, (255, 255, 255)), (50, 290))
+    screen.blit(shortcuts_font.render('[F10] - ain-cafezinho', True, (255, 255, 255)), (50, 320))
 
     pygame.display.update()
 
