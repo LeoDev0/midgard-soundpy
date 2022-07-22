@@ -26,7 +26,7 @@
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  Midgard Soundpy 🚀 Under construction...  🚧
+	🚧  Under construction...  🚧
 </h4> 
 
 <hr>
