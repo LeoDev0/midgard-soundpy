@@ -78,6 +78,9 @@ while running:
 
             if event.key == pygame.K_F10:
                 play_sound(pygame.K_F10, 'sounds/ain-cafezinho.mp3')
+            
+            if event.key == pygame.K_F11:
+                play_sound(pygame.K_F11, 'sounds/olha-la.mp3')
     
     title_font = pygame.font.Font('freesansbold.ttf', 30)
     shortcuts_font = pygame.font.Font('freesansbold.ttf', 20)
@@ -95,6 +98,8 @@ while running:
     screen.blit(shortcuts_font.render('[F8] - bolsonaro', True, (255, 255, 255)), (50, 260))
     screen.blit(shortcuts_font.render('[F9] - ain-cigarrinho', True, (255, 255, 255)), (50, 290))
     screen.blit(shortcuts_font.render('[F10] - ain-cafezinho', True, (255, 255, 255)), (50, 320))
+    screen.blit(shortcuts_font.render('[F11] - olha-la', True, (255, 255, 255)), (50, 350))
+
 
     pygame.display.update()
 
