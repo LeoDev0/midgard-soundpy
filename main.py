@@ -1,6 +1,7 @@
 import time
 import pygame
 from pygame import mixer
+from collections import defaultdict
 
 # Initialize pygame
 pygame.init()
@@ -11,6 +12,22 @@ screen = pygame.display.set_mode((600, 400))
 # Set background image
 background = pygame.image.load('images/background.jpg')
 background = pygame.transform.scale(background, (600, 400))
+
+musicControl = {
+    pygame.K_F1: "sounds/uuui.mp3",
+    pygame.K_F2: "sounds/cala-boca-puta.mp3",
+    pygame.K_F3: "sounds/me-apaixonei.mp3",
+    pygame.K_F4: "sounds/tome.mp3",
+    pygame.K_F5: "sounds/uepa.mp3",
+    pygame.K_F6: "sounds/quem-disse-que-isso-e-problema-meu.mp3",
+    pygame.K_F7: "sounds/coquinha-vai-tomar-no-cu.mp3",
+    pygame.K_F8: "sounds/bolsonaro.mp3",
+    pygame.K_F9: "sounds/ain-cigarrinho.mp3",
+    pygame.K_F10: "sounds/ain-cafezinho.mp3",
+    pygame.K_F11: "sounds/olha-la.mp3",
+}
+
+musics = defaultdict(lambda: "sounds/uuui.mp3", musicControl)
 
 # Caption and Icon
 pygame.display.set_caption('Midgard SoundPy')
@@ -49,35 +66,8 @@ while running:
             if event.key == pygame.K_SPACE:
                 pause()
 
-            if event.key == pygame.K_F1:
-                play_sound(pygame.K_F1, 'sounds/uuui.mp3')
-
-            if event.key == pygame.K_F2:
-                play_sound(pygame.K_F2, 'sounds/cala-boca-puta.mp3')
-            
-            if event.key == pygame.K_F3:
-                play_sound(pygame.K_F3, 'sounds/me-apaixonei.mp3')
-
-            if event.key == pygame.K_F4:
-                play_sound(pygame.K_F4, 'sounds/tome.mp3')
-            
-            if event.key == pygame.K_F5:
-                play_sound(pygame.K_F5, 'sounds/uepa.mp3')
-
-            if event.key == pygame.K_F6:
-                play_sound(pygame.K_F6, 'sounds/quem-disse-que-isso-e-problema-meu.mp3')
-
-            if event.key == pygame.K_F7:
-                play_sound(pygame.K_F7, 'sounds/coquinha-vai-tomar-no-cu.mp3')
-
-            if event.key == pygame.K_F8:
-                play_sound(pygame.K_F8, 'sounds/bolsonaro.mp3')
-
-            if event.key == pygame.K_F9:
-                play_sound(pygame.K_F9, 'sounds/ain-cigarrinho.mp3')
-
-            if event.key == pygame.K_F10:
-                play_sound(pygame.K_F10, 'sounds/ain-cafezinho.mp3')
+            else:
+                play_sound(event.key, musics[event.key])
     
     title_font = pygame.font.Font('freesansbold.ttf', 30)
     shortcuts_font = pygame.font.Font('freesansbold.ttf', 20)
@@ -95,6 +85,8 @@ while running:
     screen.blit(shortcuts_font.render('[F8] - bolsonaro', True, (255, 255, 255)), (50, 260))
     screen.blit(shortcuts_font.render('[F9] - ain-cigarrinho', True, (255, 255, 255)), (50, 290))
     screen.blit(shortcuts_font.render('[F10] - ain-cafezinho', True, (255, 255, 255)), (50, 320))
+    screen.blit(shortcuts_font.render('[F11] - olha-la', True, (255, 255, 255)), (50, 350))
+
 
     pygame.display.update()
 
