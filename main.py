@@ -13,7 +13,7 @@ screen = pygame.display.set_mode((600, 400))
 background = pygame.image.load('images/background.jpg')
 background = pygame.transform.scale(background, (600, 400))
 
-musicControl = {
+sounds_control = {
     pygame.K_F1: "sounds/uuui.mp3",
     pygame.K_F2: "sounds/cala-boca-puta.mp3",
     pygame.K_F3: "sounds/me-apaixonei.mp3",
@@ -27,15 +27,14 @@ musicControl = {
     pygame.K_F11: "sounds/olha-la.mp3",
 }
 
-musics = defaultdict(lambda: "sounds/uuui.mp3", musicControl)
+sounds = defaultdict(lambda: None, sounds_control)
 
 # Caption and Icon
 pygame.display.set_caption('Midgard SoundPy')
 icon = pygame.image.load('images/icon.png')
 pygame.display.set_icon(icon)
 
-def play_sound(KEY: int, sound_path: str) -> None:
-    print(KEY)
+def play_sound(sound_path: str) -> None:
     pygame.mixer.music.stop()
     pygame.mixer.music.load(sound_path)
     pygame.mixer.music.play()
@@ -65,9 +64,9 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 pause()
-
-            else:
-                play_sound(event.key, musics[event.key])
+            elif sounds[event.key] != None:
+                print(sounds[event.key])
+                play_sound(sounds[event.key])
     
     title_font = pygame.font.Font('freesansbold.ttf', 30)
     shortcuts_font = pygame.font.Font('freesansbold.ttf', 20)
@@ -86,7 +85,6 @@ while running:
     screen.blit(shortcuts_font.render('[F9] - ain-cigarrinho', True, (255, 255, 255)), (50, 290))
     screen.blit(shortcuts_font.render('[F10] - ain-cafezinho', True, (255, 255, 255)), (50, 320))
     screen.blit(shortcuts_font.render('[F11] - olha-la', True, (255, 255, 255)), (50, 350))
-
 
     pygame.display.update()
 
