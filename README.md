@@ -43,6 +43,12 @@
 
 <br>
 
+## In Memoriam
+
+Of the friends I've made, the things we lived together and the memories we shared.
+
+> que não seja imortal, posto que é chama... Mas que seja infinito enquanto dure - Vinicius de Moraes
+
 ## :dart: About ##
 
 Very important sound effects used by the best [Dock Tech](https://dock.tech/) squad.
